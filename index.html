@@ -25,7 +25,6 @@
       position: relative;
     }
 
-    /* Фиолетовые сценические лучи (spotlights) */
     .spotlight {
       position: absolute;
       bottom: 0;
@@ -53,12 +52,11 @@
       50%     { opacity: 0.85; transform: scaleY(1.15) rotate(var(--rot)); }
     }
 
-    /* Заголовок теперь по центру */
     h1 {
       font-size: clamp(2.5rem, 7vw, 5rem);
       font-weight: 200;
       letter-spacing: 0.18em;
-      margin-bottom: 50px;
+      margin-bottom: 20px;
       text-transform: uppercase;
       background: linear-gradient(90deg, #222, #aaa, #222);
       -webkit-background-clip: text;
@@ -72,6 +70,20 @@
     @keyframes titlePulse {
       0%,100% { opacity: 0.75; filter: brightness(0.9); }
       50%     { opacity: 0.98; filter: brightness(1.35); }
+    }
+
+    .callsign {
+      font-size: clamp(1.4rem, 4vw, 2.8rem);
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: #d0a0ff;
+      text-shadow: 0 0 15px rgba(180,100,255,0.6),
+                   0 0 30px rgba(140,60,220,0.4);
+      margin-bottom: 60px;
+      align-self: flex-start;
+      margin-left: calc(50% - 180px);
+      z-index: 3;
+      white-space: nowrap;
     }
 
     .container {
@@ -105,7 +117,6 @@
     .nick:nth-child(2) { transition-delay: 1.4s; }
     .nick:nth-child(3) { transition-delay: 2.1s; }
 
-    /* Частицы на фоне (оставил, но сделал их слабее, чтобы не перебивали фиолет) */
     .particles {
       position: fixed;
       inset: 0;
@@ -133,11 +144,9 @@
 </head>
 <body>
 
-  <!-- Фиолетовые прожекторы -->
   <div class="spotlight left" style="--rot: -12deg;"></div>
   <div class="spotlight right" style="--rot: 12deg;"></div>
 
-  <!-- Лёгкие частицы -->
   <div class="particles">
     <div class="particle" style="left:10%; animation-duration:90s; animation-delay:-20s; width:2px; height:2px;"></div>
     <div class="particle" style="left:25%; animation-duration:110s; animation-delay:-35s; width:1.5px; height:1.5px;"></div>
@@ -145,16 +154,16 @@
     <div class="particle" style="left:55%; animation-duration:80s; animation-delay:-15s; width:2px; height:2px;"></div>
     <div class="particle" style="left:70%; animation-duration:120s; animation-delay:-60s; width:2.5px; height:2.5px;"></div>
     <div class="particle" style="left:85%; animation-duration:100s; animation-delay:-40s; width:1.8px; height:1.8px;"></div>
-    <!-- можно добавить ещё div.particle -->
   </div>
 
   <h1>ваши ники</h1>
+
+  <div class="callsign">позывной "бананчик" 🍌🌪️</div>
 
   <div class="container">
     <div class="nick"></div>
     <div class="nick"></div>
     <div class="nick"></div>
-    <!-- вставляй сюда свои ники -->
   </div>
 
   <script>
